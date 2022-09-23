@@ -1,5 +1,10 @@
 #include <Arduino.h>
 
+/**
+ * StAuth10184: I Jiawei Zhang, 000730840 certify that this material is my original work.
+ * No other person's work has been used without due acknowledgement. 
+ */
+
 void setup() {
   Serial.begin(115200);
 
@@ -22,19 +27,19 @@ void loop() {
   // Let’s imagine that the variable resistor represents a temperature sensor such that a 0-50°C will be converted to a 0-3.3V analog output signal.
   double analogTemperture;
   analogTemperture = iVal / 50.00 * 3.3;
-  Serial.println("Digitized Value of " + String(iVal) + " is equivalent to an Temperature = " + String(analogTemperture) + "°C");
+  
   if(analogTemperture < 10){
-    Serial.println("Cold!");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Cold!");
   }else if(analogTemperture < 15){
-    Serial.println("Cool");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Cool");
   }else if(analogTemperture < 25){
-    Serial.println("Perfect");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Perfect");
   }else if(analogTemperture < 30){
-    Serial.println("Warm");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Warm");
   }else if(analogTemperture < 35){
-    Serial.println("Hot");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Hot");
   }else{
-    Serial.println("Too Hot!");
+    Serial.println("Digitized Value of " + String(iVal) + " is equivalent to a Temperature input of " + String(analogTemperture) + "deg. C which is Too Hot!");
   }
 
   delay(2000);
